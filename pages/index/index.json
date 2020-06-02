@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "imageEditor": "../../components/image/editor"
+  },
+  "navigationBarTitleText": "首页"
+}

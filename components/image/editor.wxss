@@ -1,0 +1,166 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.template {
+  position: absolute;
+  left: -999999px;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image-bar {
+  position: relative;
+  padding-top: 6rpx;
+}
+
+.image-sub-bar {
+  width: 100%;
+  display: flex;
+  background-color: #fff;
+}
+
+.image-bar .image-sub-bar:first-child {
+  box-shadow: 0 -6rpx 6rpx rgba(0,0,0,.3);
+}
+
+.image-bar .image-sub-bar:last-child {
+  padding: 0;
+  border-bottom: none;
+}
+
+.image-sub-bar .btn {
+  width: 100rpx;
+  box-shadow: none;
+}
+
+.image-sub-bar .slider {
+  flex: 1;
+}
+
+.image-sub-bar .btn {
+  flex: 1;
+  padding: 12rpx 0;
+  white-space: nowrap;
+  border-top: 2rpx solid #f8f8f8;
+  border-right: 2rpx solid #f8f8f8;
+}
+
+.bar-icon {
+  margin-right: 10rpx;
+}
+
+.bar-item {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 10rpx;
+  border-bottom: 2rpx solid #f8f8f8;
+}
+
+.bar-item ~ .bar-item {
+  border-left: 2rpx solid #f8f8f8;
+}
+
+.item-point {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60rpx;
+  height: 60rpx;
+  margin: 5rpx;
+  border-radius: 8rpx;
+  box-shadow: 3rpx 3rpx 3rpx rgba(0,0,0,.3);
+}
+
+.item-point.focus {
+  border: 4rpx solid #39b5de;
+  box-shadow: none;
+}
+
+.btn {
+  border-radius: 0;
+  line-height: 2;
+  color: #fff;
+  background-color: #39b5de;
+  overflow: visible;
+}
+
+.btn-empty {
+  background-color: transparent;
+}
+
+.btn:last-child {
+  border-right: none;
+}
+
+.btn.disabled {
+  color: #ffffff !important;
+  background-color: #39b5de !important;
+  opacity: .5;
+}
+
+.btn.focus {
+  color: #eeeeee;
+}
+
+.btn.focus::after{
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 20rpx solid transparent;
+  border-top-color: #fff;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.movable-box {
+  position:absolute; 
+  left: -100%; 
+  top: -100%; 
+  width: 300%; 
+  height: 300%;
+}
+
+.text-box {
+  border: 2rpx dashed;
+}
+
+.text-input {
+  width: 100%;
+  height: 100%;
+  line-height: 1em;
+}

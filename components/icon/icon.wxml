@@ -1,0 +1,1 @@
+<image class="{{extClass}} icon" src="{{src}}" style="width:{{size / 2}}px;height:{{size / 2}}px;" />

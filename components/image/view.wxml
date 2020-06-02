@@ -1,0 +1,13 @@
+<view class="image-view"
+  bindtouchstart="handleTouchStart"
+  bindtouchmove="handleTouchMove"
+  bindtouchend="handleTouchEnd"
+>
+  <image 
+    class="image"
+    src="{{src}}"
+    mode="aspectFit"
+    style="{{imageStyles}}"
+    bindload="handleImageLoaded"
+  />
+</view>

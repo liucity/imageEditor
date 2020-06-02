@@ -1,0 +1,63 @@
+<view class="editor">
+  <view class="image-container">
+    <movable-area class="movable-box" scale-area>
+      <movable-view style="{{imageStyles}}"
+        direction="all"
+        x="{{x}}" y="{{y}}"
+        scale="true" scale-value="{{scale}}" scale-min="1" scale-max="2"
+        bindchange="handleTouchChange" bindscale="handleTouchScale"
+      >
+        <image class="image" src="{{imageUrl}}"/>
+        <image class="canvas" src="{{canvasUrl}}" bindtap="handleTap"/>
+      </movable-view>
+      <movable-view wx:if="{{text.show}}" class="text-box" style="{{text.styles}}"
+        direction="all" x="{{text.x}}" y="{{text.y}}"
+        bindchange="handleTextTouchChange"
+      >
+        <input class="text-input" focus="{{text.focus}}" 
+          value="{{text.value}}" bindinput="handleTextChange"
+        />
+      </movable-view>
+    </movable-area>
+    <canvas class="template" canvas-id="templateCanvas" style="{{imageStyles}}"/>
+    <canvas class="cover" canvas-id="coverCanvas" wx:if="{{!isMovable}}"
+      bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove" bindtouchend="handleTouchEnd"
+      bindtap="handleTap"
+    ></canvas>
+  </view>
+  <view class="image-bar">
+    <view class="image-sub-bar">
+      <view class="bar-item">
+        <icon class="bar-icon" icon="size" color="#39b5de"/>
+        <slider class="slider" bindchange="handleSizeChange" min="10" max="30" value="{{selectedSize}}" show-value />
+      </view>
+      <view class="bar-item" wx:if="{{mode === 'type'}}">
+        <icon class="bar-icon" icon="shape" color="#39b5de"/>
+        <view wx:for="{{shapes}}" wx:key="index" 
+          class="item-point {{item === selectedType ? 'focus' : ''}}" 
+          data-type="{{item}}" bindtap='handleClickType'
+        >
+          <icon icon="{{item}}" size="40" color="#39b5de"/>
+        </view>
+      </view>
+    </view>
+    <view class="image-sub-bar" style="padding-bottom: 15rpx;">
+      <view class="bar-item">
+        <icon class="bar-icon" icon="color" color="#39b5de"/>
+        <view wx:for="{{colors}}" wx:key="index" 
+          class="item-point {{item === selectedColor ? 'focus' : ''}}" style="background:{{item}}"
+          data-color="{{item}}" bindtap='handleClickColor'
+        ></view>
+      </view>
+    </view>
+    <view class="image-sub-bar">
+      <button class="btn {{!ready || item.disabled ? 'disabled' : ''}} {{selectedMenu.name === item.name ? 'focus' : ''}}" 
+        wx:for="{{menus}}" wx:key="index"
+        data-name="{{item.name}}" bindtap="handleClickMenu" disabled="{{!ready || item.disabled}}"
+      >
+        <icon wx:if="{{item.icon}}" icon="{{item.icon}}" color="#fff"/>
+        {{item.label}}
+      </button>
+    </view>
+  </view>
+</view>
