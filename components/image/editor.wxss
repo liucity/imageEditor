@@ -115,6 +115,9 @@
   color: #fff;
   background-color: #39b5de;
   overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-empty {
