@@ -1,5 +1,5 @@
 # imageEditor
-an WeChat-program component for editing selected image
+a WeChat-program component for editing selected image
 
 # how to use
 1. copy components folder to your project
